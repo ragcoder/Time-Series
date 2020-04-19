@@ -1,14 +1,9 @@
-ReadMe
-Objective: Udacity Capstone Project for Predictive Analysis
-Problem Statement
-Software Tools
-Data Source and Format
-Analysis
-Conclusion
+**Objective:** Udacity Capstone Project for Predictive Analysis
+
 ## Task 1: Store Format for Existing Stores
 ### Problem Statement
 A grocery company has 85 stores and planning to open 10 new stores at the beginning of the year.
-### Conditions / Current Standing/ Current Situation/ Assumptions
+### Current Business Environment
 All current stores have a single design and are cared for in the same manner. These stores receive the same amount of products, regardless of sales and their unique customer shopping habits.
 ### Task
 To analyze sales and decide on store format and more tailored inventory plans
@@ -20,14 +15,16 @@ We believe the optimal number of store formats to create is 3 types.
 Using the k-means cluster model and examining both the Adjusted Rand (AR) and Calinski-Harabasz(CH) indices, each index suggests a slightly different number of clusters to create. These individual clusters represent the number of formats that the stores can be grouped. AR index suggests 3 clusters as the optimal number as it has the highest mean value. CH index, on the other hand, suggests 2 clusters but it also shows a lot more outliers. Therefore, we chose 3 clusters as it is more compact.
 
 ![alt text](images/1_cluster_analysis.jpg "Cluster Analysis")
+
 ![alt text](images/2_cluster_tables.jpg "Cluster Tables")
 
 Q2 How many stores are allocated in each cluster?
+
 -Cluster 1: 23 stores
 -Cluster 2: 29 stores
 -Cluster 3: 33 stores
 
-![alt text](images/2_cluster_sizes.jpg "Cluster Sizes")
+![alt text](images/3_cluster_sizes.jpg "Cluster Sizes")
 
 Q3 What are the characteristics of each cluster?
 Our analysis suggests 3 types of store formats with there unique characteristics.
@@ -35,7 +32,8 @@ Cluster 1: This format sells the most general merchandise, and doesn’t sell da
 Cluster 2: These stores sell mostly dairy, produce and floral items, but not a lot of deli or dry grocery goods.
 Cluster 3: Sells mostly meat and deli items
 
-![alt text](images/4_Cluster_sizes2.jpg "Cluster Sizes")
+![alt text](images/4_Cluster_size2.jpg "Cluster Sizes")
+
 ![alt text](images/4_Cluster_SolutionPCA.jpg "Cluster PCA")
 
 Q4 Show a Tableau visualization of the existing stores' locations and associated clusters
@@ -58,17 +56,18 @@ The F1-score shows that the boosted model is slightly better at predicting the f
 
 Q2 What is the new store classification?
 
-| **Store Number** | **Segment** |
-| S0086 | 3 |
-| S0087 | 2 |
-| S0088 | 1 |
-| S0089 | 2 |
-| S0090 | 2 |
-| S0091 | 1 |
-| S0092 | 2 |
-| S0093 | 1 |
-| S0094 | 2 |
-| S0095 | 2 |
+|**Store Number**|**Segment**|
+|---|---|
+|S0086 | 3 |
+|S0087 | 2 |
+|S0088 | 1 |
+|S0089 | 2 |
+|S0090 | 2 |
+|S0091 | 1 |
+|S0092 | 2 |
+|S0093 | 1 |
+|S0094 | 2 |
+|S0095 | 2 |
 
 ##Task 3: Predicting Produce Sales
 
@@ -89,11 +88,12 @@ But once we run TS Compare tool we see ETS actually performs better.
 
 ![alt text](images/9_forecast_graphETS.jpg "Forecast for ETS model")
 
-![alt text](images/10_forecast_graphARIMA.jpg "Forecast for ARIMA model")
+![alt text](images/10_Forecast_graphARIMA.jpg "Forecast for ARIMA model")
 
 Q2 provide a table of your forecasts for existing and new stores. Also, provide visualization of your forecasts that includes historical data, existing stores forecasts, and new stores forecasts.
 
 | **Month** | **New Store Sales** |**Existing Store Sales**|
+|---|---|---|
 | 16-Jan | $2,919,067.02 | $23,506,565.98 |
 | 16-Feb | $2,797,280.08 | $22,208,405.76 |
 | 16-Mar | $3,163,764.86 | $25,380,147.77 |
@@ -111,12 +111,20 @@ Q2 provide a table of your forecasts for existing and new stores. Also, provide 
 ![alt text](images/11_final_table.jpg "Tableau Time Series Visualization")
 
 
+**References**
 
 Decision Tree
+
 https://help.alteryx.com/10.0/index.htm#rpart.htm%3FTocPath%3DTools%7CPredictive%7C_____7
+
 Forest Model 
+
 https://help.alteryx.com/10.0/index.htm#randomForest.htm%3FTocPath%3DTools%7CPredictive%7C_____8
+
 Boosted Model
+
 https://help.alteryx.com/10.0/index.htm#Boosted_Model.htm
+
 F1 score
+
 https://en.wikipedia.org/wiki/F1_score
